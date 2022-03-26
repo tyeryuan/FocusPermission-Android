@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "FocusPermission-Android"
 include ':app'
+include ':FocusPermission'
