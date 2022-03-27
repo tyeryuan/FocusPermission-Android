@@ -10,5 +10,5 @@
 
 # 用法
 
-查看地址：https://github.com/tyeryuan/FocusPermission-Android.wiki.git
+查看地址：https://github.com/tyeryuan/FocusPermission-Android/wiki
 
