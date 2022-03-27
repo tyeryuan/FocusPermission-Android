@@ -10,5 +10,5 @@
 
 # 用法
 
-查看地址：https://flashy-mirror-2b1.notion.site/README-56d40c18ef0f42bebf65a6be06624224
+查看地址：https://github.com/tyeryuan/FocusPermission-Android.wiki.git
 
