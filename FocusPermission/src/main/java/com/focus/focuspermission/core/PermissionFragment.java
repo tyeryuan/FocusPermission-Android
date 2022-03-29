@@ -104,10 +104,8 @@ public class PermissionFragment extends Fragment {
         if (requester == null){
             return;
         }
-        Log.i(activity.getPackageName(),"收到了onActivityResult111");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             String[] permissions = requester.getPermissions().toArray(new String[requester.getPermissions().size()]);
-            Log.i(activity.getPackageName(),"请求一波权限：" + permissions.length);
             requestPermissions(permissions, requester.getRequestCode());
         }
     }
@@ -148,6 +146,7 @@ public class PermissionFragment extends Fragment {
                 if (deniedPermissionList.size() == 0) {
                     //没有被拒绝的权限
                     if (requester.getOnMustPermissionListener() != null) {
+                        permissionRequesterMap.remove(requester.getRequestCode()+"");
                         requester.getOnMustPermissionListener().onFinish();
                     }
                     return;
@@ -166,6 +165,7 @@ public class PermissionFragment extends Fragment {
                 break;
             case RT_NORMAL:
                 if (requester.getOnNormalPermissionListener()!=null){
+                    permissionRequesterMap.remove(requester.getRequestCode()+"");
                     requester.getOnNormalPermissionListener().onFinish(deniedPermissionList);
                 }
                 break;

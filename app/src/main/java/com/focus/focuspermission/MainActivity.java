@@ -4,6 +4,7 @@ import android.Manifest;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.focus.focuspermission.core.listener.OnMustPermissionListener;
 
@@ -19,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
                 new OnMustPermissionListener() {
                     @Override
                     public void onFinish() {
-                        Log.i(MainActivity.this.getPackageName(),"权限全部通过");
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this,"权限全部通过" , Toast.LENGTH_LONG);
+                            }
+                        });
+
                     }
 
                     @Override

@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
 import android.text.TextUtils;
 
 
@@ -79,12 +80,11 @@ public class PermissionSettingUtil {
      * 获取应用详情页面intent（如果找不到要跳转的界面，也可以先把用户引导到系统设置页面）
      */
     private static Intent getAppDetailSettingIntent(PermissionFragment fragment) {
-        Intent localIntent = new Intent();
-        localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        localIntent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-        localIntent.setData(Uri.fromParts("package", fragment.getRequestActivity().getPackageName(), null));
 
-        return localIntent;
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", fragment.getRequestActivity().getPackageName(), null);
+        intent.setData(uri);
+        return intent;
     }
 
     static void startActivityForResult(PermissionFragment fragment, Intent intent, int requestCode){
