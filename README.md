@@ -9,7 +9,7 @@
 查看地址：https://github.com/tyeryuan/FocusPermission-Android/wiki
 
 # AndroidStudio版本注意事项
-## 使用AndroidStudio3.5版本
+## 若使用AndroidStudio3.5版本
 需要修改settings.gradle文件内容，保留为:
 ```java
 rootProject.name = "FocusPermission-Android"
