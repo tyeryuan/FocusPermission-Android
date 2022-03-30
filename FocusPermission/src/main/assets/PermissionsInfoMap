@@ -1,0 +1,42 @@
+<PermissionsMap>
+    <Permission id="android.permission.ACCEPT_HANDOVER" level="dangerous" name="" description="允许呼叫应用继续在另一个应用中启动的呼叫。"/>
+    <Permission id="android.permission.ACCESS_BACKGROUND_LOCATION" level="dangerous" name="" description="允许应用在后台访问位置。"/>
+    <Permission id="android.permission.ACCESS_COARSE_LOCATION" level="dangerous" name="" description="允许应用访问大致位置。"/>
+    <Permission id="android.permission.ACCESS_FINE_LOCATION" level="dangerous" name="" description="允许应用访问精确位置。"/>
+    <Permission id="android.permission.ACCESS_MEDIA_LOCATION" level="dangerous" name="" description="允许应用程序访问保存在用户共享集合中的任何地理位置。"/>
+    <Permission id="android.permission.ACTIVITY_RECOGNITION" level="dangerous" name="" description="允许应用程序识别身体活动。"/>
+    <Permission id="com.android.voicemail.permission.ADD_VOICEMAIL" level="dangerous" name="" description="允许应用程序将语音邮件添加到系统中。"/>
+    <Permission id="android.permission.ANSWER_PHONE_CALLS" level="dangerous" name="" description="允许该应用接听来电。"/>
+    <Permission id="android.permission.BLUETOOTH_ADVERTISE" level="dangerous" name="" description="需要能够向附近的蓝牙设备做广告。"/>
+    <Permission id="android.permission.BLUETOOTH_CONNECT" level="dangerous" name="" description="需要能够连接到配对的蓝牙设备。"/>
+    <Permission id="android.permission.BLUETOOTH_SCAN" level="dangerous" name="" description="需要能够发现和配对附近的蓝牙设备。"/>
+    <Permission id="android.permission.BODY_SENSORS" level="dangerous" name="" description="允许应用程序访问来自传感器的数据，用户使用这些传感器来测量他们体内正在发生的事情，例如心率。"/>
+    <Permission id="android.permission.BODY_SENSORS_BACKGROUND" level="dangerous" name="" description="允许应用程序在后台访问来自传感器的数据，用户使用这些传感器来测量他们体内正在发生的事情"/>
+    <Permission id="android.permission.CALL_PHONE" level="dangerous" name="" description="允许应用程序发起电话呼叫，而无需通过拨号器用户界面让用户确认呼叫。"/>
+    <Permission id="android.permission.CAMERA" level="dangerous" name="" description="需要能够访问相机设备。"/>
+    <Permission id="android.permission.GET_ACCOUNTS" level="dangerous" name="" description="允许访问帐户服务中的帐户列表。"/>
+    <Permission id="android.permission.NEARBY_WIFI_DEVICES" level="dangerous" name="" description="需要能够通过 Wi-Fi 进行广告宣传和连接到附近的设备。"/>
+    <Permission id="android.permission.POST_NOTIFICATIONS" level="dangerous" name="" description="允许应用发布通知。"/>
+    <Permission id="android.permission.PROCESS_OUTGOING_CALLS" level="dangerous" name="" description="允许应用程序在拨出呼叫期间查看正在拨打的号码，并可选择将呼叫重定向到其他号码或完全中止呼叫。"/>
+    <Permission id="android.permission.READ_CALENDAR" level="dangerous" name="" description="允许应用程序读取用户的日历数据。"/>
+    <Permission id="android.permission.READ_CALL_LOG" level="dangerous" name="" description="允许应用程序读取用户的通话记录。"/>
+    <Permission id="android.permission.READ_CONTACTS" level="dangerous" name="" description="允许应用程序读取用户的联系人数据。"/>
+    <Permission id="android.permission.READ_EXTERNAL_STORAGE" level="dangerous" name="" description="允许应用程序从外部存储中读取。"/>
+    <Permission id="android.permission.READ_MEDIA_AUDIO" level="dangerous" name="" description="允许应用程序从外部存储读取音频文件。"/>
+    <Permission id="android.permission.READ_MEDIA_IMAGE" level="dangerous" name="" description="允许应用程序从外部存储读取图像文件。"/>
+    <Permission id="android.permission.READ_MEDIA_VIDEO" level="dangerous" name="" description="允许应用程序从外部存储读取音频文件。"/>
+    <Permission id="android.permission.READ_PHONE_NUMBERS" level="dangerous" name="" description="允许读取设备的电话号码。"/>
+    <Permission id="android.permission.READ_PHONE_STATE" level="dangerous" name="" description="允许对手机状态进行只读访问。"/>
+    <Permission id="android.permission.READ_SMS" level="dangerous" name="" description="允许应用程序读取 SMS 消息。"/>
+    <Permission id="android.permission.RECEIVE_MMS" level="dangerous" name="" description="允许应用程序监控传入的彩信。"/>
+    <Permission id="android.permission.RECEIVE_SMS" level="dangerous" name="" description="允许应用程序接收 SMS 消息。"/>
+    <Permission id="android.permission.RECEIVE_WAP_PUSH" level="dangerous" name="" description="允许应用程序接收 WAP 推送消息。"/>
+    <Permission id="android.permission.RECORD_AUDIO" level="dangerous" name="" description="允许应用程序录制音频。"/>
+    <Permission id="android.permission.SEND_SMS" level="dangerous" name="" description="允许应用程序发送 SMS 消息。"/>
+    <Permission id="android.permission.USE_SIP" level="dangerous" name="" description="允许应用程序使用 SIP 服务。"/>
+    <Permission id="android.permission.UWB_RANGING" level="dangerous" name="" description="需要能够覆盖使用超宽带的设备。"/>
+    <Permission id="android.permission.WRITE_CALENDAR" level="dangerous" name="" description="允许应用程序写入用户的日历数据。"/>
+    <Permission id="android.permission.WRITE_CALL_LOG" level="dangerous" name="" description="允许应用程序写入（但不读取）用户的通话记录数据。"/>
+    <Permission id="android.permission.WRITE_CONTACTS" level="dangerous" name="" description="允许应用程序写入用户的联系人数据。"/>
+    <Permission id="android.permission.WRITE_EXTERNAL_STORAGE" level="dangerous" name="" description="允许应用程序写入外部存储。"/>
+</PermissionsMap>

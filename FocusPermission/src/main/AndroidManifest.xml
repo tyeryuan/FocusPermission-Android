@@ -5,4 +5,13 @@
 
     <uses-permission android:name="android.permission.GRANT_RUNTIME_PERMISSIONS"
         tools:ignore="ProtectedPermissions" />
+    <application>
+
+        <activity android:name=".ui.PreRequestPermission.PreRequestPermissionActivity"
+            android:screenOrientation="behind"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+
+        </activity>
+
+    </application>
 </manifest>
