@@ -1,6 +1,7 @@
 # README
 
 # FocusPermission-Android
+![](https://jitpack.io/v/tyeryuan/FocusPermission-Android.svg)
 
 权限管理
 
