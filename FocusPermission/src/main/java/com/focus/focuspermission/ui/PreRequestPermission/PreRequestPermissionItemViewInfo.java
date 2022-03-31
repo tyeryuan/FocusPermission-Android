@@ -1,8 +1,12 @@
 package com.focus.focuspermission.ui.PreRequestPermission;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.focus.focuspermission.core.Utils;
 
 public class PreRequestPermissionItemViewInfo {
     private int position;
@@ -37,7 +41,7 @@ public class PreRequestPermissionItemViewInfo {
             @Override
             public void onClick(View v) {
                 if (preRequestPermissionItemInfo!=null){
-                    preRequestPermissionItemInfo.getOnGrantCallback().onRequestPermission(position,preRequestPermissionItemInfo.getPermission());
+                    preRequestPermissionItemInfo.getOnClickGrantBtnCallback().onRequestPermission(position);
                 }
             }
         });
@@ -55,5 +59,18 @@ public class PreRequestPermissionItemViewInfo {
     private TextView textView_permission;
     private TextView textView_description;
     private Button btn_grant;
+
+
+    public void updateGrantStateUI(){
+        if (getPreRequestPermissionItemInfo().isGrant()){
+            btn_grant.setText("已授权");
+            Utils.changeShapeRoundButtonColor(btn_grant, "#2fff00");
+        }
+        else {
+            btn_grant.setText("授权");
+            Utils.changeShapeRoundButtonColor(btn_grant, "#b2afae");
+        }
+
+    }
 
 }

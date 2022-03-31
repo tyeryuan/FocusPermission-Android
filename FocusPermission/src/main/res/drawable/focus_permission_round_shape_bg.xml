@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <solid android:color="#ffffff" />
     <stroke
-        android:width="0.8dp"
+        android:width="0.2dp"
         android:color="#ffffff" />
     <!-- 圆角 -->
     <corners android:radius="10dp" />

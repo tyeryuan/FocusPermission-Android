@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.focus.focuspermission.R;
+import com.focus.focuspermission.core.PermissionInfo;
 
 import java.util.List;
 
@@ -46,20 +47,31 @@ public class PreRequestPermissionListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         PreRequestPermissionItemViewInfo preRequestPermissionItemViewInfo;
+        PreRequestPermissionItemInfo itemInfo = (PreRequestPermissionItemInfo) getItem(position);
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.focus_permission_prerequest_item, null);
             preRequestPermissionItemViewInfo = new PreRequestPermissionItemViewInfo(position);
-            preRequestPermissionItemViewInfo.setPreRequestPermissionItemInfo(preRequestPermissionItemInfos.get(position));
+            preRequestPermissionItemViewInfo.setPreRequestPermissionItemInfo(itemInfo);
             preRequestPermissionItemViewInfo.setTextView_permission(convertView.findViewById(R.id.textView_PermissionName));
             preRequestPermissionItemViewInfo.setTextView_description(convertView.findViewById(R.id.textView_PermissionDescription));
             preRequestPermissionItemViewInfo.setBtn_grant(convertView.findViewById(R.id.button_grant));
             convertView.setTag(preRequestPermissionItemViewInfo);
+            convertView.setMinimumHeight(70);
         } else {
             preRequestPermissionItemViewInfo = (PreRequestPermissionItemViewInfo) convertView.getTag();
         }
 
-        preRequestPermissionItemViewInfo.getTextView_permission().setText(preRequestPermissionItemInfos.get(position).getPermission());
+        preRequestPermissionItemViewInfo.updateGrantStateUI();
 
+        String permissionName = itemInfo.getPermission();
+        String description = itemInfo.getPermission();
+        if (itemInfo.getPermissionInfo()!=null) {
+            permissionName = itemInfo.getPermissionInfo().getName();
+            description = itemInfo.getPermissionInfo().getDescription();
+        }
+        preRequestPermissionItemViewInfo.getTextView_permission().setText(permissionName);
+        preRequestPermissionItemViewInfo.getTextView_description().setText(description);
         return convertView;
     }
+
 }

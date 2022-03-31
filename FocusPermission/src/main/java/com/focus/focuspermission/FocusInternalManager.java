@@ -18,7 +18,7 @@ import java.util.Arrays;
 /**
  * 内部管理器
  */
-class FocusInternalManager {
+public class FocusInternalManager {
 
     private static FocusInternalManager instance = new FocusInternalManager();
 

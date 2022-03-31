@@ -2,12 +2,17 @@ package com.focus.focuspermission;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.focus.focuspermission.core.listener.OnMustPermissionListener;
 import com.focus.focuspermission.core.listener.OnNormalPermissionListener;
 import com.focus.focuspermission.ui.PreRequestPermission.PreRequestPermissionActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 权限帮助类，对外提供接口
@@ -93,9 +98,28 @@ public class FocusPermission {
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    PreRequestPermissionActivity.setConfig(permissions, onMustPermissionListener, onNormalPermissionListener);
-                    Intent intent = new Intent(activity, PreRequestPermissionActivity.class);
-                    activity.startActivity(intent);
+                    List<String> deniedList = new ArrayList<>();
+                    for (int i = 0; i < permissions.length; i++) {
+                        String permission = permissions[i];
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (activity.checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED){
+                                deniedList.add(permission);
+                            }
+                        }
+                    }
+                    if (deniedList.size() > 0 ) {
+                        PreRequestPermissionActivity.setConfig(permissions, onMustPermissionListener, onNormalPermissionListener);
+                        Intent intent = new Intent(activity, PreRequestPermissionActivity.class);
+                        activity.startActivity(intent);
+                    }
+                    else {
+                        if (onMustPermissionListener != null) {
+                            onMustPermissionListener.onFinish();
+                        }
+                        else if (onNormalPermissionListener != null) {
+                            onNormalPermissionListener.onFinish(deniedList);
+                        }
+                    }
                 }
             });
         }
