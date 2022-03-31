@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.focus.focuspermission.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -173,9 +175,24 @@ public class PermissionFragment extends Fragment {
     }
 
     private void showMustPermissionDialog(PermissionRequester requester, List<String> dontAskDeniedPermissionList){
+        String tip = getRequestActivity().getResources().getString(R.string.focus_permission_dont_ask_jump_permissionsetting_tip);
+        String permissions = "";
+        for (int i = 0; i < dontAskDeniedPermissionList.size(); i++) {
+            if (i>0){
+                permissions +="、";
+            }
+            PermissionInfo permissionInfo = PermissionInfo.GetPermissionInfo(getRequestActivity(), dontAskDeniedPermissionList.get(i));
+            if (permissionInfo!=null) {
+                permissions += permissionInfo.getName();
+            }
+            else {
+                permissions += dontAskDeniedPermissionList.get(i);
+            }
+        }
+        tip = String.format(tip,permissions);
         new AlertDialog.Builder(activity)
                 .setTitle("警告")
-                .setMessage(requester.getOnMustPermissionListener().getDontAskDeniedPermissionDialogTip())
+                .setMessage(tip)
                 .setCancelable(false)
                 .setPositiveButton("跳转", new DialogInterface.OnClickListener() {
                     @Override

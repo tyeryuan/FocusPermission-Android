@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="focus_permission_dont_ask_jump_permissionsetting_tip">游戏需要%1$s权限，您已经拒绝过并勾选了不再提醒；若您需要授权，请跳转权限设置界面进行手动授权！</string>
+</resources>

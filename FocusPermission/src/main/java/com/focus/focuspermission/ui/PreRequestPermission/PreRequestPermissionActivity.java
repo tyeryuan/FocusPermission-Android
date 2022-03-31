@@ -185,11 +185,6 @@ public class PreRequestPermissionActivity extends Activity implements OnClickGra
                         }
                         updatePermissionItemUI();
                     }
-
-                    @Override
-                    public String getDontAskDeniedPermissionDialogTip() {
-                        return onMustPermissionListener.getDontAskDeniedPermissionDialogTip();
-                    }
                 });
             }
 
